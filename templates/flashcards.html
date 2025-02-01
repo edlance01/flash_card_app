@@ -1,15 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flashcards</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
+
     <h1>Flashcards</h1>
-    {% for term, definition in flashcards.items() %}
-        <div>
-            <h2>{{ term }}</h2>
-            <p>{{ definition }}</p>
-        </div>
-    {% endfor %}
+
+    <div class="flashcard-container">
+        {% for term, definition in flashcards.items() %}
+            <div class="flashcard">
+                <div class="card">
+                    <div class="front">
+                        <h2>{{ term }}</h2>
+                    </div>
+                    <div class="back">
+                        <p>{{ definition }}</p>
+                    </div>
+                </div>
+                <button class="flip-btn" onclick="flipCard(this)">Flip</button>
+            </div>
+        {% endfor %}
+    </div>
+
+    <script>
+        // Function to flip the card when button is clicked
+        function flipCard(button) {
+            const card = button.previousElementSibling; // Find the card div
+            card.style.transform = card.style.transform === "rotateY(180deg)" ? "rotateY(0deg)" : "rotateY(180deg)";
+        }
+    </script>
 </body>
 </html>

@@ -6,55 +6,48 @@ import tempfile
 app = Flask(__name__)
 
 def get_bullet_style(para):
-        numPr = para._element.find(
+    numPr = para._element.find(
             ".//w:numPr", namespaces=para._element.nsmap
         )
 
-        return numPr
+    return numPr
 
 
 def extract_terms_and_definitions(doc_path):
     """
-    Extracts terms and definitions from a Word document where
-    all paragraph styles are 'Normal' and bullet points are
-    represented by the bullet point character (•).
+    Extracts terms and definitions from a plain text file.
     """
-    doc = docx.Document(doc_path)
+    with open(doc_path, "r", encoding="utf-8") as f:
+        lines = f.readlines()
+
     terms_and_definitions = {}
     term = None
     definition = ""
 
-    for i, paragraph in enumerate(doc.paragraphs):
-        print(f"\n\nPARAGRAPH:{paragraph.text}\n")
-        if not paragraph.text.strip():
-            continue
-        if get_bullet_style(paragraph) is not None:
-            if term:
+    for line in lines:
+        # Check for lines starting with a bullet point
+        if line.startswith("•"):
+            if term:  # Save the previous term and definition
                 terms_and_definitions[term] = definition.strip()
+
+            # Split the line into term and definition
+            parts = line.split(":", 1)
             term = (
-                paragraph.text.split(":")[0].strip()
-                if ":" in paragraph.text
-                else paragraph.text.strip()
-            )
+                parts[0].replace("•", "").strip()
+            )  # Remove bullet point from the term
 
-            print(f"\nTERM:{term}")
+            # Ensure we extract the definition correctly
             definition = (
-                paragraph.text.split(":", 1)[1].strip() if ":" in paragraph.text else ""
-            )
+                parts[1].strip() if len(parts) > 1 else ""
+            )  # Check for a definition after ':'
+        elif term:  # Continue accumulating definition
+            definition += " " + line.strip()
 
-            print(f"\nDEFINITION:{definition}")
-
-            # Check for blank line after definition
-            next_para = doc.paragraphs[i + 1] if i + 1 < len(doc.paragraphs) else None
-            if next_para and not next_para.text.strip():
-                break
-        elif term:
-            definition += " " + paragraph.text
-
-    if term:
+    if term:  # Add the last term and definition to the dictionary
         terms_and_definitions[term] = definition.strip()
 
     return terms_and_definitions
+
 
 @app.route("/", methods=["GET", "POST"])
 def index():
@@ -75,6 +68,7 @@ def index():
                 temp_path = tmp.name
             # Process the saved file
             terms_and_definitions = extract_terms_and_definitions(temp_path)
+            print(f"TERMS and DEFINITIONS")
             # Remove the temporary file
             os.remove(temp_path)
             return redirect(url_for("flashcards", terms=terms_and_definitions))
@@ -97,4 +91,4 @@ def flashcards():
 if __name__ == "__main__":
 
     #get_bullet_style("static/input_files/EssentialsOfAI_Module1_Vocab.docx")
-    app.run(debug=True)
+    app.run(debug=True, port=5001)
