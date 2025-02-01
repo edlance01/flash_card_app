@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flashcards</title>
+</head>
+<body>
+    <h1>Flashcards</h1>
+    {% for term, definition in flashcards.items() %}
+        <div>
+            <h2>{{ term }}</h2>
+            <p>{{ definition }}</p>
+        </div>
+    {% endfor %}
+</body>
+</html>
