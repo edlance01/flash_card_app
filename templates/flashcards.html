@@ -4,35 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flashcards</title>
-    <!-- Link to the external CSS file -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-
     <h1>Flashcards</h1>
-
-    <div class="flashcard-container">
+    <button id="randomizeButton">Randomize Cards</button>
+    <div id="cardsContainer">
         {% for term, definition in flashcards.items() %}
-            <div class="flashcard">
-                <div class="card">
-                    <div class="front">
-                        <h2>{{ term }}</h2>
-                    </div>
-                    <div class="back">
-                        <p>{{ definition }}</p>
-                    </div>
-                </div>
-                <button class="flip-btn" onclick="flipCard(this)">Flip</button>
+        <div class="flashcard">
+            <div class="card front">
+                <h2>{{ term }}</h2>
             </div>
+            <div class="card back">
+                <p>{{ definition }}</p>
+            </div>
+            <button class="flipButton">Flip</button>
+        </div>
         {% endfor %}
     </div>
 
     <script>
-        // Function to flip the card when button is clicked
-        function flipCard(button) {
-            const card = button.previousElementSibling; // Find the card div
-            card.style.transform = card.style.transform === "rotateY(180deg)" ? "rotateY(0deg)" : "rotateY(180deg)";
+        // Shuffle function
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+            }
         }
+
+        // Function to randomize the cards
+        document.getElementById('randomizeButton').onclick = function() {
+            const container = document.getElementById('cardsContainer');
+            const cards = Array.from(container.getElementsByClassName('flashcard'));
+            shuffleArray(cards);
+            cards.forEach(card => container.appendChild(card)); // Reattach cards in new order
+        };
+
+        // Flip function
+        document.querySelectorAll('.flipButton').forEach(button => {
+            button.addEventListener('click', () => {
+                const card = button.closest('.flashcard');
+                card.classList.toggle('flipped');
+            });
+        });
     </script>
 </body>
 </html>

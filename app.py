@@ -91,4 +91,4 @@ def flashcards():
 if __name__ == "__main__":
 
     #get_bullet_style("static/input_files/EssentialsOfAI_Module1_Vocab.docx")
-    app.run(debug=True, port=5001)
+    app.run(debug=True, port=5000)
