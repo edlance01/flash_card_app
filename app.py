@@ -1,9 +1,10 @@
 from flask import Flask, render_template, request, redirect, url_for
-import docx
 import os
 import tempfile
 
 app = Flask(__name__)
+UPLOAD_FOLDER = "static/input_files"
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 def get_bullet_style(para):
     numPr = para._element.find(
@@ -62,15 +63,17 @@ def index():
             return redirect(request.url)
         if file:
             print("\n***STARTING***")
-            # Save the file to a temporary location
-            with tempfile.NamedTemporaryFile(delete=False) as tmp:
-                file.save(tmp.name)
-                temp_path = tmp.name
+            # Save the file directly to the mounted upload folder
+            file_path = os.path.join(UPLOAD_FOLDER, file.filename)
+            file.save(file_path)
+
             # Process the saved file
-            terms_and_definitions = extract_terms_and_definitions(temp_path)
+            terms_and_definitions = extract_terms_and_definitions(file_path)
             print(f"TERMS and DEFINITIONS")
-            # Remove the temporary file
-            os.remove(temp_path)
+
+            # Optionally remove the file after processing if not needed
+            # os.remove(file_path)
+
             return redirect(url_for("flashcards", terms=terms_and_definitions))
     return render_template("index.html")
 
@@ -86,6 +89,17 @@ def flashcards():
         return render_template("flashcards.html", flashcards=terms_and_definitions)
     else:
         return redirect(url_for("index"))
+
+
+@app.route("/upload", methods=["POST"])
+def upload_file():
+    if "file" not in request.files:
+        return "No file part", 400
+    file = request.files["file"]
+    if file.filename == "":
+        return "No selected file", 400
+    file.save(os.path.join(UPLOAD_FOLDER, file.filename))
+    return f"File {file.filename} uploaded successfully", 200
 
 
 if __name__ == "__main__":
