@@ -102,7 +102,4 @@ def upload_file():
     return f"File {file.filename} uploaded successfully", 200
 
 
-if __name__ == "__main__":
 
-    #get_bullet_style("static/input_files/EssentialsOfAI_Module1_Vocab.docx")
-    app.run(debug=True, port=5000)
