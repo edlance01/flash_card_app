@@ -12,6 +12,5 @@ COPY . . /flash_card_app/
 
 EXPOSE 5000
 
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app:app"]
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "run:app"]
 
-/Users/edwardlance/FlashCard/flash_card_app/static/input_files/EssentialsOfAI_Module1_Vocab.txt
