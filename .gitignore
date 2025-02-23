@@ -36,8 +36,8 @@ figures/
 chroma_db/
 
 # Ignore input folders
-input_files/
-uploads/
+# input_files/
+# uploads/
 
 # Ignore backup-repo
 backup-repo/

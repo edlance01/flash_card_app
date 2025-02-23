@@ -1,0 +1,4 @@
+
+•	Algorithm: A set of instructions or rules followed to solve a problem or perform a task.   
+•	Augmented Reality (AR): is an interactive experience that combines real-world and computer-generated 3D content
+•	Model: A trained AI system that can make predictions or decisions.   

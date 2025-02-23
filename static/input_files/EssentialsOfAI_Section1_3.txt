@@ -1,0 +1,2 @@
+•	Training Data: The dataset used to train an AI model.
+•	Bias: Systematic errors or unfairness in an AI system's output, often due to biased training data.

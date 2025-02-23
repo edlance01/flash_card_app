@@ -1,0 +1,9 @@
+
+
+•	Artificial Intelligence (AI): The ability of a computer or machine to mimic human intelligence, such as learning, problem-solving, and decision-making.   
+•	Computer Vision: A field of AI that enables computers to "see" and interpret images and videos.   
+•	Deep Learning (DL): A type of machine learning that uses multi-layered neural networks to analyze data and solve complex problems.      
+•	Generative AI: AI models that can create new content, such as text, images, music, and code. 
+•	Machine Learning (ML): A type of AI where systems learn from data without explicit programming.   
+•	Natural Language Processing (NLP): A field of AI focused on enabling computers to understand and communicate with humans using natural language.
+•	Neural Network: A complex computer system inspired by the human brain, used in deep learning.   
