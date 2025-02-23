@@ -12,4 +12,4 @@ COPY .  /flash_card_app/
 
 EXPOSE 5000
 
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "--timeout", "30", "--workers", "3", "wsgi:app"]
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "--timeout", "120", "--workers", "3", "wsgi:app"]
