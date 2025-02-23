@@ -8,7 +8,10 @@
 </head>
 <body>
     <h1>Flashcards</h1>
-    <button id="randomizeButton">Randomize Cards</button>
+    <div class="button-container">
+        <a href="{{ url_for('index') }}" class="flash-button">Home</a>
+        <button class="flash-button" id="randomizeButton">Randomize Cards</button>
+    </div>
     <div id="cardsContainer">
         {% for term, definition in flashcards.items() %}
         <div class="flashcard">

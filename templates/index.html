@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Flashcard Generator</title>
+    <title>Flashcard Files</title>
+    <style>
+        li {
+            margin-bottom: 10px; /* Adjust the value as needed */
+        }
+    </style>
 </head>
 <body>
-    <h1>Flashcard Generator</h1>
-    <p>Upload a Word document with terms and definitions:</p>
-    <form method="POST" enctype="multipart/form-data">
-        <input type="file" name="file">
-        <input type="submit" value="Upload">
-    </form>
+    <h1>Select a File</h1>
+    <ul>
+        {% for file in files %}
+        <li><a href="{{ url_for('flashcards', filename=file) }}">{{ file }}</a></li> 
+        {% endfor %}
+    </ul>
 </body>
 </html>
