@@ -2,8 +2,9 @@ from flask import Flask, render_template, request, redirect, url_for
 import os
 
 app = Flask(__name__)
+print("starting...")
 UPLOAD_FOLDER = os.path.join(app.static_folder, "input_files")
-
+print(f"UPLOAD folder is:{UPLOAD_FOLDER}")
 # Ensure the upload folder exists
 if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
