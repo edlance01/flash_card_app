@@ -4,7 +4,7 @@ import time
 
 app = Flask(__name__)
 print("starting...", flush=True)
-UPLOAD_FOLDER = os.path.join(app.static_folder, "input_files")
+UPLOAD_FOLDER = "/flash_card_app/static/input_files"
 print(f"UPLOAD folder is:{UPLOAD_FOLDER}", flush=True)
 # Ensure the upload folder exists
 if not os.path.exists(UPLOAD_FOLDER):
