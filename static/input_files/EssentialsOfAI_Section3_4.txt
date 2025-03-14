@@ -1,0 +1,18 @@
+
+
+•   Edge Case: Edge cases are unusual or extreme inputs or situations that can cause unexpected behavior in an AI model.    
+
+
+•  Meta-Prompting: Use prompts to generate or refine other prompts. 
+
+
+•  Temperature Control: Adjust the "temperature" parameter (if available) to control the randomness of the output. Lower temperature = more deterministic, higher temperature = more creative.  
+
+•  Top-p (Nucleus Sampling): Another parameter to control randomness, focusing on the most likely tokens.
+p = 1.0 (No Nucleus Sampling): The model picks from all possible next words.    
+p = 0.9: The model selects only from the smallest group of words whose combined probability is 90%.    
+Lower p-values: Result in more focused and predictable responses. 
+   
+
+   
+

@@ -1,0 +1,2 @@
+•   Hallucination: Hallucinations occur when an AI model produces false or misleading information.
+

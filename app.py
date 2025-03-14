@@ -4,7 +4,7 @@ import time
 
 app = Flask(__name__)
 print("starting...", flush=True)
-UPLOAD_FOLDER = "/flash_card_app/static/input_files"
+UPLOAD_FOLDER = "static/input_files"
 print(f"UPLOAD folder is:{UPLOAD_FOLDER}", flush=True)
 # Ensure the upload folder exists (not needed for docker)
 # if not os.path.exists(UPLOAD_FOLDER):
@@ -86,3 +86,7 @@ def flashcards(filename):
     else:
         print("File not found.", flush=True)
         return redirect(url_for("index"))
+    
+
+# if __name__ == "__main__":
+#     app.run(host="127.0.0.1", port=5000, debug=True)

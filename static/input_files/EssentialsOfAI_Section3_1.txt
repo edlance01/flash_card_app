@@ -1,0 +1,21 @@
+•   Prompt: A prompt is basically an instruction given to an AI.
+
+•   Chain-of-Thought Prompting: You ask the AI model to explain its thought process step-by-step
+
+•   Generative AI Systems:  Systems that are designed to generate outputs based on the provided prompts
+
+•   Hybrid Prompting: You combine different prompting methods
+
+•   Improved Responses: AI models can respond better to messages that are clear and contextually relevant
+
+•   Iterative Prompting: You refine your prompt based on the outputs you receive
+
+•   Multi-Shot Learning: You provide the prompt and multiple examples
+
+•   N-Shot Learning (Zero-Shot Learning, One-Shot Learning, Few-Shot Learning, Multi-Shot Learning): A type of learning where the AI model is provided with the prompt and N examples, where N can be zero, one, few, or multiple examples, to guide its learning
+
+•   Negative Prompting: You tell the AI what not to do
+
+•   One-Shot Learning: You provide the prompt and one example
+
+•   Prompt Chaining: You break down a complex task into smaller prompts, then chain the outputs to form the response

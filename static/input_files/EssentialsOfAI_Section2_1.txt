@@ -1,0 +1,47 @@
+•   Algorithm: A set of instructions that tell a computer how to learn and perform tasks.
+
+•   Artificial Intelligence (AI): The overarching field of creating machines or systems capable of performing tasks that typically require human intelligence.
+
+•   Bias: AI systems can inherit or amplify biases present in the training data, leading to discriminatory outcomes. AI bias is the occurrence of biased results due to human biases that skew the original training data or algorithm.
+
+•   Binary Classification: Label determines whether observed item is or isn’t an instance of the specified class
+
+•   Classification: Form of supervised machine learning where the label represents a categorization, or class. In machine learning, classification refers to predicting a discrete category or label
+
+•   Clustering: Form of unsupervised machine learning that identifies similarities between observations based on their features, and groups them into discrete clusters
+
+•   Computer Vision: A subfield of AI that teaches computers to interpret visual data (e.g., images and videos).
+
+•   Deep Learning (DL): A specialized subset of ML that uses artificial neural networks with multiple layers (hence “deep”) to model and solve complex problems.
+
+•   False Negative (FN): The model incorrectly predicted the negative class (Type II error)
+
+•   False Positive (FP): The model incorrectly predicted the positive class (Type I error)
+
+•   Generative AI: Generative AI refers to deep-learning models that can generate content based on the data they were trained on.
+
+•   Inference: Using the function to predict new values is known as inferencing.
+
+•   Machine Learning (ML): A subset of AI focused on systems that learn from data to improve their performance on specific tasks without being explicitly programmed. Machine Learning is the intersection of two disciplines: Data Science where we explore and prepare data to train an ML model Compute Science where we integrate models into an application and predict new values (inferencing)
+
+•   Model: A trained system that can make predictions or decisions. Fundamentally, a machine learning model is a software app that encapsulates a function to calculate an output value based on one or more input values.
+
+•   Multiclass Classification: Label that represents one of multiple possible classes (e.g. genre of a movie based on its cast, director, and budget
+
+•   Natural Language Processing (NLP): Another subfield of AI that uses machine learning to allow computers to understand and communicate with human language.
+
+•   Neural Network: A method in AI that teaches computers to process data in a way that is based on the human brain.
+
+•   Regression: Form of supervised machine learning where the label predicted by the model is a numeric value. form of supervised machine learning where the label predicted by the model is a numeric value
+
+•   Supervised Learning: Supervised Learning – algorithms in which the training data includes both feature values and known label values The AI is trained on data that's already labeled with the correct answers. Supervised learning needs labeled data, like a teacher guiding a student. The data is used for prediction and classification
+
+•   Training: The process of defining the function is known as training. Machine learning models learn from data in a two-phase process: training and inferencing.
+
+•   Training Data: Training data refers to the dataset used to teach an AI model. Training data refers to the dataset used to teach an AI model
+
+•   True Negative (TN): The model correctly predicted the negative class
+
+•   True Positive (TP): The model correctly predicted the positive class
+
+•   Unsupervised Learning: Unsupervised Learning - training models using data that consists only of feature values without any known labels The AI is exploring the data on its own to find patterns and group things together. Unsupervised learning works with unlabeled data, like an explorer discovering new lands. The data is used for finding patterns and groupings

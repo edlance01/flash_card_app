@@ -1,19 +1,29 @@
+•   Artificial Intelligence (AI): The overarching field of creating machines or systems capable of performing tasks that typically require human intelligence.
 
+•   Algorithm: A set of instructions that tell a computer how to learn and perform tasks.
 
-•	Artificial Intelligence (AI): The ability of a computer or machine to mimic human intelligence, such as learning, problem-solving, and decision-making.   
-•	Computer Vision: A field of AI that enables computers to "see" and interpret images and videos.   
-•	Deep Learning (DL): A type of machine learning that uses multi-layered neural networks to analyze data and solve complex problems.      
-•	Generative AI: AI models that can create new content, such as text, images, music, and code. 
-•	Machine Learning (ML): A type of AI where systems learn from data without explicit programming.   
-•	Natural Language Processing (NLP): A field of AI focused on enabling computers to understand and communicate with humans using natural language.
-•	Neural Network: A complex computer system inspired by the human brain, used in deep learning.   
+•   Augmented Reality (AR): Augmented reality (AR) is an interactive experience that combines real-world and computer-generated 3D content.
 
-•	Algorithm: A set of instructions or rules followed to solve a problem or perform a task.   
-•	Augmented Reality (AR): is an interactive experience that combines real-world and computer-generated 3D content
-•	Model: A trained AI system that can make predictions or decisions.   
-•	Training Data: The dataset used to train an AI model.
-•	Bias: Systematic errors or unfairness in an AI system's output, often due to biased training data.
-•	Large Language Model (LLM): AI models trained on vast amounts of text data, capable of understanding and generating human-like text.   
-•	Generative Model: These models are designed to generate new data resembling the training data.
-•	Supervised Learning: A type of machine learning where the model is trained on labeled data (data with known inputs and outputs).  
-•	Unsupervised Learning: A type of machine learning where the model identifies patterns in data without labeled outputs.
+•   Bias: AI systems can inherit or amplify biases present in the training data, leading to discriminatory outcomes. AI bias is the occurrence of biased results due to human biases that skew the original training data or algorithm.
+
+•   Computer Vision: A subfield of AI that teaches computers to interpret visual data (e.g., images and videos).
+
+•   Deep Learning (DL): A specialized subset of ML that uses artificial neural networks with multiple layers (hence “deep”) to model and solve complex problems.
+
+•   Generative AI: Generative AI refers to deep-learning models that can generate content based on the data they were trained on. Generative models work by identifying patterns and distributions in their training data and using those findings to generate new data based on user inputs.
+
+•   Large Language Model (LLM): Not explicitly defined in the text, but described as working on tokens.
+
+•   Machine Learning (ML): A subset of AI focused on systems that learn from data to improve their performance on specific tasks without being explicitly programmed.
+
+•   Model: A trained system that can make predictions or decisions.
+
+•   Natural Language Processing (NLP): Another subfield of AI that uses machine learning to allow computers to understand and communicate with human language.
+
+•   Neural Network: A method in AI that teaches computers to process data in a way that is based on the human brain.
+
+•   Supervised Learning: The AI is trained on data that's already labeled with the correct answers.
+
+•   Training Data: Training data refers to the dataset used to teach an AI model.
+
+•   Unsupervised Learning: The AI is exploring the data on its own to find patterns and group things together.

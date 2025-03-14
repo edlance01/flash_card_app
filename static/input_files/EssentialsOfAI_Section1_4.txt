@@ -1,4 +1,7 @@
-•	Large Language Model (LLM): AI models trained on vast amounts of text data, capable of understanding and generating human-like text.   
-•	Generative Model: These models are designed to generate new data resembling the training data.
-•	Supervised Learning: A type of machine learning where the model is trained on labeled data (data with known inputs and outputs).  
-•	Unsupervised Learning: A type of machine learning where the model identifies patterns in data without labeled outputs.
+•   Supervised Learning: The AI is trained on data that's already labeled with the correct answers. [cite: 3]
+
+•   Unsupervised Learning: The AI is exploring the data on its own to find patterns and group things together. [cite: 9]
+
+•   Large Language Model (LLM): Not explicitly defined in the text, but described as working on tokens.
+
+•   Generative Model: Generative models work by identifying patterns and distributions in their training data and using those findings to generate new data based on user inputs.
