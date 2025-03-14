@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 import os
+import time
 
 app = Flask(__name__)
 print("starting...")
@@ -11,30 +12,39 @@ if not os.path.exists(UPLOAD_FOLDER):
 
 
 def extract_terms_and_definitions(doc_path):
-    """Extracts terms and definitions from a plain text file."""
-    with open(doc_path, "r", encoding="utf-8") as f:
-        lines = f.readlines()
+    try:
+        start_time = time.time()
 
-    terms_and_definitions = {}
-    term = None
-    definition = ""
+        """Extracts terms and definitions from a plain text file."""
+        with open(doc_path, "r", encoding="utf-8") as f:
+            lines = f.readlines()
 
-    for line in lines:
-        if line.startswith("•"):
-            if term:
-                terms_and_definitions[term] = definition.strip()
+        terms_and_definitions = {}
+        term = None
+        definition = ""
 
-            parts = line.split(":", 1)
-            term = parts[0].replace("•", "").strip()  # Fix: Extract the first element
-            definition = parts[1].strip() if len(parts) > 1 else ""  # Extract definition safely
-        elif term:
-            definition += " " + line.strip()
+        for line in lines:
+            if line.startswith("•"):
+                if term:
+                    terms_and_definitions[term] = definition.strip()
 
-    if term:
-        terms_and_definitions[term] = definition.strip()
+                parts = line.split(":", 1)
+                term = parts[0].replace("•", "").strip()  # Fix: Extract the first element
+                definition = parts[1].strip() if len(parts) > 1 else ""  # Extract definition safely
+            elif term:
+                definition += " " + line.strip()
 
+        if term:
+            terms_and_definitions[term] = definition.strip()
 
-    return terms_and_definitions
+        print(f"Processing took {time.time() - start_time:.2f} seconds.")
+        return terms_and_definitions
+    except FileNotFoundError:
+        print(f"File not found: {doc_path}")
+        return {}
+    except Exception as e:
+        print(f"Error parsing file: {doc_path}, {e}")
+        return {}
 
 
 @app.route("/", methods=["GET"])
