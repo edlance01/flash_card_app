@@ -14,6 +14,4 @@ COPY static/input_files /flash_card_app/static/input_files
 
 EXPOSE 5000
 
-#CMD ["gunicorn", "--bind", "0.0.0.0:5000", "--timeout", "120", "--workers", "3", "wsgi:application"]
-#CMD ["gunicorn", "--bind", "0.0.0.0:5000", "--timeout", "300", "--workers", "5", "--worker-class", "gthread", "--access-logfile", "-", "wsgi:application"]
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "--timeout", "300", "--workers", "3", "test_wsgi:application"]
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "--timeout", "120", "--workers", "3", "wsgi:application"]
