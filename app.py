@@ -6,9 +6,9 @@ app = Flask(__name__)
 print("starting...", flush=True)
 UPLOAD_FOLDER = "/flash_card_app/static/input_files"
 print(f"UPLOAD folder is:{UPLOAD_FOLDER}", flush=True)
-# Ensure the upload folder exists
-if not os.path.exists(UPLOAD_FOLDER):
-    os.makedirs(UPLOAD_FOLDER)
+# Ensure the upload folder exists (not needed for docker)
+# if not os.path.exists(UPLOAD_FOLDER):
+#     os.makedirs(UPLOAD_FOLDER)
 
 
 def extract_terms_and_definitions(doc_path):
@@ -50,8 +50,10 @@ def extract_terms_and_definitions(doc_path):
 
 @app.route("/", methods=["GET"])
 def index():
+    print(f"Accessing index...", flush=True)
     """Main route for displaying the list of files."""
     files = os.listdir(UPLOAD_FOLDER)
+    print(f"There were {len(files)} files found.", flush=True)
     files.sort()  # Sort the files alphabetically
     return render_template("index.html", files=files)
 
