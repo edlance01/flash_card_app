@@ -1,4 +1,4 @@
-from app_real import app
+from app import app
 
 application = app
 
